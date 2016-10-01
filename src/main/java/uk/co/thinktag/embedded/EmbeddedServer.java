@@ -25,6 +25,12 @@ public class EmbeddedServer {
 
     public static void main(String args[]) throws Exception {
 
+        startServer();
+        
+    }
+    
+    public static void startServer() throws Exception {
+        
         Class.forName(org.apache.activemq.artemis.core.server.ActiveMQServerLogger.class
                         .getCanonicalName());
 
@@ -48,7 +54,7 @@ public class EmbeddedServer {
         jmsServer.start();
     }
 
-    private static void stopServer() throws Exception {
+    public static void stopServer() throws Exception {
         if (jmsServer != null) {
             jmsServer.stop();
         }
